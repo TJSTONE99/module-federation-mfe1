@@ -1,7 +1,13 @@
+import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import ('./mfe1/mfe1.module').then((m: any) => m.Mfe1Module)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
